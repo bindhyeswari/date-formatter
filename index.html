@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="base.css"/>
+    <title></title>
+</head>
+<body>
+<input type="date" placeholder="start"/>
+<input type="text" placeholder="duration" autofocus value="16 days"/>
+<input style="width: 20em;" type="text" placeholder="end date"/>
+
+<script>
+
+
+    document.querySelector('[placeholder="duration"]').addEventListener('keydown', function (event) {
+
+        if (event.keyCode === 13) {
+            console.log(this.value);
+
+            convertToSeconds(this.value);
+
+
+        }
+
+        function convertToSeconds(str) {
+
+            var regex = /(\d+)\s+(days?|months?|seconds?|secs?|hours?|weeks?|minutes?|mins?)/gmi;
+            var match = regex.exec(this.value);
+            console.log('quantity: ', match[1],', \nunits: ',  match[2]);
+
+            var seconds = 0;
+            // return value to seconds;
+            return seconds;
+        }
+    })
+
+</script>
+</body>
+</html>
